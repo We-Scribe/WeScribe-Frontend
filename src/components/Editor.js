@@ -11,18 +11,18 @@ class Editor extends Component {
     };
     window.firebase.initializeApp(config);
     //// Get Firebase Database reference.
-    var firepadRef = this.getExampleRef();
+    var firepadRef = window.firebase.database().ref();
     //// Create CodeMirror (with lineWrapping on).
     var codeMirror = window.CodeMirror(document.getElementById('firepad-container'), { lineWrapping: true });
     //// Create Firepad (with rich text toolbar and shortcuts enabled).
     var firepad = window.Firepad.fromCodeMirror(firepadRef, codeMirror,
-        { richTextToolbar: true, richTextShortcuts: true });
+        { richTextToolbar: true, richTextShortcuts: true, defaultText: 'Hello, World!' });
     //// Initialize contents.
-    firepad.on('ready', function() {
-      if (firepad.isHistoryEmpty()) {
-        firepad.setHtml('<span style="font-size: 24px;">Rich-text editing with <span style="color: red">Firepad!</span></span><br/><br/>Collaborative-editing made easy.\n');
-      }
-    });
+    // firepad.on('ready', function() {
+    //   if (firepad.isHistoryEmpty()) {
+    //     firepad.setHtml('<span style="font-size: 24px;">Rich-text editing with <span style="color: red">Firepad!</span></span><br/><br/>Collaborative-editing made easy.\n');
+    //   }
+    // });
   }
 
   // Helper to get hash from end of URL or generate a random one.
@@ -33,7 +33,7 @@ class Editor extends Component {
       ref = ref.child(hash);
     } else {
       ref = ref.push(); // generate unique location.
-      window.location = window.location + '#' + ref.key; // add it as a hash to the URL.
+      window.location = window.location + '/#' + ref.key; // add it as a hash to the URL.
     }
     if (typeof console !== 'undefined') {
       console.log('Firebase data: ', ref.toString());

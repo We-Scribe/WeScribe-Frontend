@@ -7,7 +7,7 @@ const BaseRouter = () => (
   <div>
     <Switch>
       <Route exact path='/cis-hackathon/' component={Home} />
-      <Route exact path='/cis-hackathon/main' component={Main} />
+      <Route path='/cis-hackathon/main' component={Main} />
     </Switch>
   </div>
 );
