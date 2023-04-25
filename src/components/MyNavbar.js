@@ -16,7 +16,10 @@ function MyNavbar() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className = "ml-auto">
           {/* Needs to be updated according to user is authenticated or not */}
+<<<<<<< HEAD
           <Nav.Link className = "nav-link" href="/cis-hackathon/register"><span>Register</span></Nav.Link>
+=======
+>>>>>>> d99b2e687ce204e477819a0f8039416cb329f252
           <Nav.Link className = "nav-link" href="/cis-hackathon/login"><span>Login</span></Nav.Link>
           <Nav.Link className = "nav-link" href="/cis-hackathon/notes"><span>Notes</span></Nav.Link>
           <Nav.Link className = "nav-link" href="/cis-hackathon/main"><span>Main</span></Nav.Link>
