@@ -1,7 +1,7 @@
-import {Container,Row, Col} from 'react-bootstrap'
-import '../css/Main.css'
 import YouTube from 'react-youtube';
 import { useState } from 'react';
+import Editor from './Editor.js'
+import '../static/Main.css'
 
 function Main(){
 
@@ -21,18 +21,18 @@ function Main(){
     return(
     <div className="row">
     <div className="column">
-        <h2>Video</h2>
-        <div class ="px-5 py-2">
+        <div class ="px-2 py-2">
         <form class="form-inline">
             <label >{val}</label>
             <input class="form-control w-75 pl-2" type="text" value={nameState.name} onChange={e => {setNameState({name:e.target.value})}} />
         </form>
         </div>
-        <YouTube className= "video" videoId={nameState.name} opts={opts}/>;
+        <YouTube className= "video" videoId={nameState.name} opts={opts}/>
     </div>
     <div className="column" >
-        <h2>Text</h2>
-        <textarea placeholder ="Text Area" class="form-control h-75 my-lg-5"></textarea>
+        <main style={{maxHeight:'70vh'}}>
+          <Editor/> 
+        </main>
     </div>
     </div>
     )

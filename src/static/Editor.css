@@ -1,0 +1,13 @@
+#firepad-container{
+    padding-top: 1vw;
+}
+.firepad {
+    
+    height: 84vh;
+    border: 2px dotted orange;  
+    background-color: rgb(255, 255, 255);
+  }
+  .firepad-dropdown-menu a {
+
+    color: #000000!important;
+  }
