@@ -11,16 +11,11 @@ class Editor extends Component {
     };
     window.firebase.initializeApp(config);
     //// Get Firebase Database reference.
-<<<<<<< HEAD
     var firepadRef = this.getExampleRef();
-=======
-    var firepadRef = window.firebase.database().ref();
->>>>>>> d99b2e687ce204e477819a0f8039416cb329f252
     //// Create CodeMirror (with lineWrapping on).
     var codeMirror = window.CodeMirror(document.getElementById('firepad-container'), { lineWrapping: true });
     //// Create Firepad (with rich text toolbar and shortcuts enabled).
     var firepad = window.Firepad.fromCodeMirror(firepadRef, codeMirror,
-<<<<<<< HEAD
         { richTextToolbar: true, richTextShortcuts: true });
     //// Initialize contents.
     firepad.on('ready', function() {
@@ -28,15 +23,6 @@ class Editor extends Component {
         firepad.setHtml('<span style="font-size: 24px;">Rich-text editing with <span style="color: red">Firepad!</span></span><br/><br/>Collaborative-editing made easy.\n');
       }
     });
-=======
-        { richTextToolbar: true, richTextShortcuts: true, defaultText: 'Hello, World!' });
-    //// Initialize contents.
-    // firepad.on('ready', function() {
-    //   if (firepad.isHistoryEmpty()) {
-    //     firepad.setHtml('<span style="font-size: 24px;">Rich-text editing with <span style="color: red">Firepad!</span></span><br/><br/>Collaborative-editing made easy.\n');
-    //   }
-    // });
->>>>>>> d99b2e687ce204e477819a0f8039416cb329f252
   }
 
   // Helper to get hash from end of URL or generate a random one.

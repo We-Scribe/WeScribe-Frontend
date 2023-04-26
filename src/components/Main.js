@@ -17,14 +17,13 @@ function Main(){
           autoplay: 1,
         },
       };
-      const val = "Enter Video ID: "
     return(
     <div className="row">
     <div className="column">
         <div class ="px-2 py-2">
         <form class="form-inline">
-            <label >{val}</label>
-            <input class="form-control w-75 pl-2" type="text" value={nameState.name} onChange={e => {setNameState({name:e.target.value})}} />
+            <label style= {{paddingInlineEnd:'15px'}}>Enter Video ID:</label>
+            <input class="form-control w-50 pl-2 rounded" type="text" value={nameState.name} onChange={e => {setNameState({name:e.target.value})}} />
         </form>
         </div>
         <YouTube className= "video" videoId={nameState.name} opts={opts}/>
