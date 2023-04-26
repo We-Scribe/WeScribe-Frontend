@@ -1,13 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store, { persistor } from './store';
+import { PersistGate } from 'redux-persist/integration/react';
+
+import App from './App';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+
+const app = (
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
+  </Provider>
+);
+window.firebase.initializeApp({
+  apiKey: "AIzaSyDnDV9cOMlN1ucdx19c0z9jxVbK-4feim0",
+  databaseURL: "https://cis-hackathon-default-rtdb.firebaseio.com",
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {app}
   </React.StrictMode>,
   document.getElementById('root')
 );

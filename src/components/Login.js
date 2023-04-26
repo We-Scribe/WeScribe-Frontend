@@ -1,38 +1,102 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-export default class Login extends Component {
-    render() {
-        return (
-            <div className="outer">
-                <div className="inner">
-                    <form>
+import { connect } from 'react-redux';
+import * as actions from '../actions/auth';
+import { ErrorHandler } from '../utils/ErrorHandler';
 
-                        <h3>Log in</h3>
+function LoginForm (props) {
 
-                        <div className="form-group">
-                            <label>Email</label>
-                            <input type="email" className="form-control" placeholder="Enter email" />
-                        </div>
+    const [state , setState] = useState({
+        username : "",
+        password : "",
+    })
 
-                        <div className="form-group">
-                            <label>Password</label>
-                            <input type="password" className="form-control" placeholder="Enter password" />
-                        </div>
+    const handleChange = (e) => {
+        const {id , value} = e.target   
+        setState(prevState => ({
+            ...prevState,
+            [id] : value
+        }))
+    }
 
-                        <div className="form-group">
-                            <div className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                                <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-                            </div>
-                        </div>
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-                        <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
-                        <div className="forgot-password text-right">
-                            Forgot <a href="#">password?</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        props.onAuth(
+          state.username,
+          state.password,
         );
     }
+
+    const onAuthenticated = () => {
+        props.history.push('/cis-hackathon/');
+    }
+
+    if (props.isAuthenticated) {
+        onAuthenticated();
+    }
+
+    let errorMessage = null;
+    if (props.error) {
+        errorMessage = <p>{ErrorHandler(props.error)}</p>;
+    }
+
+    return (
+        <div>
+            <div style={{ color: 'red' }}>{errorMessage}</div>
+            <div className="outer">
+            <div className="inner">
+                <form name="login">
+                    <h3>Login</h3>
+                    <div className="form-group">
+                        <label>Username</label>
+                        <input type="text" 
+                            className="form-control" 
+                            id="username" 
+                            placeholder="Username"
+                            value={state.username}
+                            onChange={handleChange} 
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="exampleInputPassword1">Password</label>
+                        <input type="password" 
+                            className="form-control" 
+                            id="password" 
+                            placeholder="Password"
+                            value={state.password}
+                            onChange={handleChange} 
+                        />
+                    </div>
+
+                    <button type="submit" className="btn btn-dark btn-lg btn-block" onClick={handleSubmit}>
+                        Sign in
+                    </button>
+
+                    <div className="forgot-password text-right">
+                        Not <a href="/cis-hackathon/register">registered</a> yet?
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    );
 }
+
+const mapStateToProps = (state) => {
+    return {
+        error: state.error,
+        isAuthenticated: state.isAuthenticated,
+    };
+};
+  
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onAuth: (username, password) =>
+        dispatch(actions.authLogin(username, password)),
+    };
+};
+  
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
+  

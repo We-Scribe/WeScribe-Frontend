@@ -1,40 +1,149 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-export default class SignUp extends Component {
-    render() {
-        return (
-            <div className="outer">
-                <div className="inner">
-                    <form>
-                        <h3>Register</h3>
+import { connect } from 'react-redux';
+import * as actions from '../actions/auth';
+import { ErrorHandler } from '../utils/ErrorHandler';
 
-                        <div className="form-group">
-                            <label>First name</label>
-                            <input type="text" className="form-control" placeholder="First name" />
-                        </div>
+function RegisterForm (props) {
 
-                        <div className="form-group">
-                            <label>Last name</label>
-                            <input type="text" className="form-control" placeholder="Last name" />
-                        </div>
+    const [state , setState] = useState({
+        firstname : "",
+        lastname: "",
+        username : "",
+        email : "",
+        password : "",
+    })
 
-                        <div className="form-group">
-                            <label>Email</label>
-                            <input type="email" className="form-control" placeholder="Enter email" />
-                        </div>
+    const handleChange = (e) => {
+        const {id , value} = e.target   
+        setState(prevState => ({
+            ...prevState,
+            [id] : value
+        }))
+    }
 
-                        <div className="form-group">
-                            <label>Password</label>
-                            <input type="password" className="form-control" placeholder="Enter password" />
-                        </div>
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-                        <button type="submit" className="btn btn-dark btn-lg btn-block">Register</button>
-                        <div className="forgot-password text-right">
-                            Already registered <a href="#">log in?</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        props.onAuth(
+          state.firstname,
+          state.lastname,
+          state.username,
+          state.email,
+          state.password,
         );
     }
+    
+    const onAuthenticated = () => {
+        props.history.push('/cis-hackathon/');
+    }
+
+    if (props.isAuthenticated) {
+        onAuthenticated();
+    }
+
+    let errorMessage = null;
+    if (props.error) {
+        errorMessage = <p>{ErrorHandler(props.error)}</p>;
+    }
+
+    return (
+        <div>
+            <div style={{ color: 'red' }}>{errorMessage}</div>
+            <div className="outer">
+            <div className="inner">
+                <form name="register">
+                    <h3>Register</h3>
+                    <div className="form-group">
+                        <label>First name</label>
+                        <input type="text" 
+                            className="form-control" 
+                            id="firstname" 
+                            placeholder="Firstname"
+                            value={state.firstname}
+                            onChange={handleChange} 
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Last name</label>
+                        <input type="text" 
+                            className="form-control" 
+                            id="lastname" 
+                            placeholder="Lastname"
+                            value={state.lastname}
+                            onChange={handleChange} 
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Username</label>
+                        <input type="text" 
+                            className="form-control" 
+                            id="username" 
+                            placeholder="Username"
+                            value={state.username}
+                            onChange={handleChange} 
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Email address</label>
+                        <input type="email" 
+                            className="form-control" 
+                            id="email" 
+                            placeholder="Enter email" 
+                            value={state.email}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="exampleInputPassword1">Password</label>
+                        <input type="password" 
+                            className="form-control" 
+                            id="password" 
+                            placeholder="Password"
+                            value={state.password}
+                            onChange={handleChange} 
+                        />
+                    </div>
+
+                    <button type="submit" className="btn btn-dark btn-lg btn-block" onClick={handleSubmit}>
+                        Register
+                    </button>
+
+                    <div className="forgot-password text-right">
+                        Already registered <a href="/cis-hackathon/login">log in?</a>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    );
 }
+
+const mapStateToProps = (state) => {
+    return {
+      loading: state.loading,
+      error: state.error,
+      isAuthenticated: state.isAuthenticated,
+    };
+  };
+  
+const mapDispatchToProps = (dispatch) => {
+    return {
+    onAuth: (firstname, lastname, username, email, password) =>
+        dispatch(
+        actions.authSignup(
+            firstname,
+            lastname,
+            username,
+            email,
+            password
+        )
+        ),
+    };
+};
+  
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm);  

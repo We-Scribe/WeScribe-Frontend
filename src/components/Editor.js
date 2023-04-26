@@ -5,11 +5,6 @@ class Editor extends Component {
   componentDidMount() {
     //// Initialize Firebase.
     //// TODO: replace with your Firebase project configuration.
-    var config = {
-      apiKey: "AIzaSyDnDV9cOMlN1ucdx19c0z9jxVbK-4feim0",
-      databaseURL: "https://cis-hackathon-default-rtdb.firebaseio.com",
-    };
-    window.firebase.initializeApp(config);
     //// Get Firebase Database reference.
     var firepadRef = this.getExampleRef();
     //// Create CodeMirror (with lineWrapping on).
