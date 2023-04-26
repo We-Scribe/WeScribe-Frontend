@@ -20,7 +20,6 @@ function MyNavbar(props) {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className = "ml-auto">
-          {/* Needs to be updated according to user is authenticated or not */}
           {!isAuthenticated ?
           [
             <Nav.Link key="1" as={Link} className = "nav-link" to="/cis-hackathon/register"><span>Register</span></Nav.Link>,
