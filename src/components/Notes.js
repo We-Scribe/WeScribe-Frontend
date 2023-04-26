@@ -42,16 +42,17 @@ class Notes extends Component {
                 <CardColumns style ={{ marginLeft:'10vw',marginRight:'10vw',maxWidth:'75vw'}}>
                 {arr.map((note) => {
                     return (
-                        <Link to={"/cis-hackathon/main/" + note.boardID}>
-                            <Card>
-                            <Card.Body>
+                        <Card>
+                        <Card.Body>
+                            <Link to= {"/cis-hackathon/main" + note.boardID}>
                                 <Card.Title>{note.title}</Card.Title>
-                            </Card.Body>
-                            <Card.Footer>
-                                <small className="text-muted">Created at {note.created}</small>
-                            </Card.Footer>
-                            </Card>
-                        </Link>
+                            </Link>
+                            <Card.Text>{note.id} {note.description}</Card.Text>
+                        </Card.Body>
+                        <Card.Footer>
+                            <small className="text-muted">Created at {note.created}</small>
+                        </Card.Footer>
+                        </Card>
                     );
                 })}
                 </CardColumns>

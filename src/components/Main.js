@@ -1,9 +1,10 @@
-import YouTube from 'react-youtube';
 import { useState } from 'react';
 import Editor from './Editor.js'
 import '../static/Main.css'
+import CopyButton from './CopyButton'
 
-function Main(){
+function Main() {
+
   const connectVideo = (e) => {
     var url = e.target.value;
     if (url != undefined || url != '') {
@@ -16,37 +17,29 @@ function Main(){
         }
         else {
           setNameState({name:url,value:url})
-        }
-        
+        }   
     }
   }
-    const [nameState,setNameState] = useState({
-      name: "https://www.youtube.com/watch?v=5qap5aO4i9A",
-      value: "https://youtube.com/embed/5qap5aO4i9A"
-    })
+
+  const [nameState,setNameState] = useState({
+    name: "https://www.youtube.com/watch?v=5qap5aO4i9A",
+    value: "https://youtube.com/embed/5qap5aO4i9A"
+  })
     
-    const opts = {
-        height: 'inherit',
-        width: '100%',
-        playerVars: {
-          // https://developers.google.com/youtube/player_parameters
-          autoplay: 1,
-        },
-      };
     return(
     <div className="row">
     <div className="column">
-        <div class ="px-2 py-2">
-        <form class="form-inline">
+        <div className ="px-2 py-2">
+        <form className="form-inline">
             <label style= {{paddingInlineEnd:'15px'}}>Enter Video/Meeting URL:</label>
-            <input class="form-control w-50 pl-2 rounded" type="text" value={nameState.name} onChange={e => {connectVideo(e)}} />
+            <input className="form-control w-50 pl-2 rounded" type="text" value={nameState.name} onChange={e => {connectVideo(e)}} />
         </form>
         </div>
         <iframe src={nameState.value}
         className="video"
         frameborder='0'
         allow='autoplay; encrypted-medial; gyroscope; picture-in-picture'
-        allowfullscreen = "1"
+        allowFullScreen = "1"
         title='video'
         width = "97%"
         frameborder="0"
@@ -54,6 +47,10 @@ function Main(){
     </div>
     <div className="column" >
         <main style={{maxHeight:'70vh'}}>
+          <form className="form-inline">
+          <label style= {{fontFamily:'sans-serif,Poppins',paddingInlineEnd:'5px'}}>Share this board with your friends now! </label>
+          <CopyButton/>
+          </form>
           <Editor/> 
         </main>
     </div>
