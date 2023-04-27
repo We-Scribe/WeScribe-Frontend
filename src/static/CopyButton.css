@@ -27,7 +27,7 @@
   .button {
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     flex-wrap: nowrap;
     height: var(--button-height-px);
     padding: var(--button-vertical-padding-px) 9px;
@@ -61,7 +61,7 @@
   .copy {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
   }
   
   .icon {

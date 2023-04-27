@@ -40,7 +40,7 @@ class Notes extends Component {
         notes = (
             <div style ={{marginTop:'5vw'}}>
                 <CardColumns style ={{ marginLeft:'10vw',marginRight:'10vw',maxWidth:'75vw'}}>
-                {arr.map((note) => {
+                {arr.map((note) => {    
                     return (
                         <Card>
                         <Card.Body>
@@ -50,7 +50,7 @@ class Notes extends Component {
                             <Card.Text>{note.id} {note.description}</Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <small className="text-muted">Created at {note.created}</small>
+                            <small className="text-muted">Created at {new Date(note.created).toLocaleDateString() +" "+ new Date(note.created).toLocaleTimeString()}</small>
                         </Card.Footer>
                         </Card>
                     );
