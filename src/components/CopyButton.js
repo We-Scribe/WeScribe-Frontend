@@ -12,17 +12,17 @@ function CopyButton() {
           }
     }
     return(
-    // <div class="wrapper">
+    // <div className="wrapper">
     <CopyToClipboard text={window.location.href}>
-    <button class="button" type="button" id="button" title="Copy link" onClick={animate}>
-        <div class="content">
-        <div class="copy">
+    <button className="button" type="button" id="button" title="Copy link" onClick={animate}>
+        <div className="content">
+        <div className="copy">
             <svg
             width="13"
             height="13"
-            viewbox="0 0 13 13"
+            viewBox="0 0 13 13"
             fill="none"
-            class="icon"
+            className="icon"
             aria-hidden="true"
             focusable="false"
             >
@@ -35,7 +35,7 @@ function CopyButton() {
             Copy Link
             </div>
         </div>
-        <div class="copied">Copied</div>
+        <div className="copied">Copied</div>
         </div>
     </button>
     </CopyToClipboard>

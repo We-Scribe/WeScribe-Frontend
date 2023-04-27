@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import RegisterForm from './components/Register';
 import Login from './components/Login';
-import Main from './components/Main';
+import Board from './components/Board';
 import Notes from './components/Notes';
 
 const BaseRouter = () => (
@@ -13,8 +13,8 @@ const BaseRouter = () => (
       <Route exact path='/cis-hackathon/' component={Home} />
       <Route exact path='/cis-hackathon/register' component={RegisterForm} />
       <Route exact path='/cis-hackathon/login' component={Login} />
-      <Route path='/cis-hackathon/main' component={Main} />
-      <Route path='/cis-hackathon/notes' component={Notes} />
+      <Route exact path='/cis-hackathon/notes' component={Notes} />
+      <Route path='/cis-hackathon/board' component={Board} />
     </Switch>
   </div>
 );

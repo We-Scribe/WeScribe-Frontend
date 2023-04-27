@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Editor from './Editor.js'
-import '../static/Main.css'
+import '../static/Board.css'
 import CopyButton from './CopyButton'
 
-function Main() {
+function Board() {
 
   const connectVideo = (e) => {
     var url = e.target.value;
@@ -37,12 +37,12 @@ function Main() {
         </div>
         <iframe src={nameState.value}
         className="video"
-        frameborder='0'
+        frameBorder='0'
         allow='autoplay; encrypted-medial; gyroscope; picture-in-picture'
         allowFullScreen = "1"
         title='video'
         width = "97%"
-        frameborder="0"
+        frameBorder="0"
         />
     </div>
     <div className="column" >
@@ -57,4 +57,4 @@ function Main() {
     </div>
     )
 }
-export default Main
+export default Board

@@ -26,8 +26,7 @@ function MyNavbar(props) {
             <Nav.Link key="2" as={Link} className = "nav-link" to="/cis-hackathon/login"><span>Login</span></Nav.Link>  
           ]:[
             <Nav.Link key="3" as={Link} className = "nav-link" to="/cis-hackathon/notes"><span>Notes</span></Nav.Link>,
-            <Nav.Link key="4" as={Link} className = "nav-link" to="/cis-hackathon/main"><span>Main</span></Nav.Link>,
-            <Nav.Link key="5" as={Link} className = "nav-link" to="/cis-hackathon/" onClick={logout}><span>Logout</span></Nav.Link>,
+            <Nav.Link key="4" as={Link} className = "nav-link" to="/cis-hackathon/" onClick={logout}><span>Logout</span></Nav.Link>,
           ]}
         </Nav>
       </Navbar.Collapse>
