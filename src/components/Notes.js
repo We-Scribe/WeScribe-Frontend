@@ -47,7 +47,7 @@ class Notes extends Component {
                             <Link to= {"/cis-hackathon/board" + note.boardID}>
                                 <Card.Title>{note.title}</Card.Title>
                             </Link>
-                            <Card.Text>{note.id} {note.description}</Card.Text>
+                            <Card.Text>{note.description}</Card.Text>
                         </Card.Body>
                         <Card.Footer>
                             <small className="text-muted">Created at {new Date(note.created).toLocaleDateString() +" "+ new Date(note.created).toLocaleTimeString()}</small>

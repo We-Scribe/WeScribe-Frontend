@@ -22,8 +22,8 @@ function Board() {
   }
 
   const [nameState,setNameState] = useState({
-    name: "https://www.youtube.com/watch?v=5qap5aO4i9A",
-    value: "https://youtube.com/embed/5qap5aO4i9A"
+    name: "https://www.youtube.com/watch?v=bmVKaAV_7-A",
+    value: "https://youtube.com/embed/bmVKaAV_7-A"
   })
     
     return(
