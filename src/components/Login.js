@@ -29,7 +29,7 @@ function LoginForm (props) {
     }
 
     const onAuthenticated = () => {
-        props.history.push('/cis-hackathon/');
+        props.history.push('/WeScribe/');
     }
 
     if (props.isAuthenticated) {
@@ -75,7 +75,7 @@ function LoginForm (props) {
                     </button>
 
                     <div className="forgot-password text-right">
-                        Not <a href="/cis-hackathon/register">registered</a> yet?
+                        Not <a href="/WeScribe/register">registered</a> yet?
                     </div>
                 </form>
             </div>

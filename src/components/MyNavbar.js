@@ -13,7 +13,7 @@ function MyNavbar(props) {
   return(
   <Navbar collapseOnSelect bg = "navbar" >
     <Container>
-      <Navbar.Brand as={Link} className="nav-brand" to="/cis-hackathon/">
+      <Navbar.Brand as={Link} className="nav-brand" to="/WeScribe/">
         <img className="navbar_logo" src = {logo} />
       </Navbar.Brand>
 
@@ -22,11 +22,11 @@ function MyNavbar(props) {
         <Nav className = "ml-auto">
           {!isAuthenticated ?
           [
-            <Nav.Link key="1" as={Link} className = "nav-link" to="/cis-hackathon/register"><span>Register</span></Nav.Link>,
-            <Nav.Link key="2" as={Link} className = "nav-link" to="/cis-hackathon/login"><span>Login</span></Nav.Link>  
+            <Nav.Link key="1" as={Link} className = "nav-link" to="/WeScribe/register"><span>Register</span></Nav.Link>,
+            <Nav.Link key="2" as={Link} className = "nav-link" to="/WeScribe/login"><span>Login</span></Nav.Link>  
           ]:[
-            <Nav.Link key="3" as={Link} className = "nav-link" to="/cis-hackathon/notes"><span>Notes</span></Nav.Link>,
-            <Nav.Link key="4" as={Link} className = "nav-link" to="/cis-hackathon/" onClick={logout}><span>Logout</span></Nav.Link>,
+            <Nav.Link key="3" as={Link} className = "nav-link" to="/WeScribe/notes"><span>Notes</span></Nav.Link>,
+            <Nav.Link key="4" as={Link} className = "nav-link" to="/WeScribe/" onClick={logout}><span>Logout</span></Nav.Link>,
           ]}
         </Nav>
       </Navbar.Collapse>

@@ -44,7 +44,7 @@ class Notes extends Component {
                     return (
                         <Card>
                         <Card.Body>
-                            <Link to= {"/cis-hackathon/board" + note.boardID}>
+                            <Link to= {"/WeScribe/board" + note.boardID}>
                                 <Card.Title>{note.title}</Card.Title>
                             </Link>
                             <Card.Text>{note.description}</Card.Text>
