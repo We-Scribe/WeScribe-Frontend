@@ -1,14 +1,41 @@
-
+.outerBoard{
+  min-height: 100vh;
+  background-color: black;
+  overflow-y: hidden;
+}
 .video{
-    height: 77vh;
+    height: 80vh;
 }
 .whiteboard{
-  height: 77vh;
+  height: 80vh;
   background-color: white;
+}
+.mainTrial{
+  /* display: flex; */
+background-color: #090C2A;
+/* flex-direction: row; */
+align-items: center;
+justify-content: space-evenly;
+border-radius: 20px;
+border: 2px solid black;
+margin-top: 3vh;
+margin-bottom: 1vh;
+margin-left: 3vw;
+width: 95vw;
+height: 95vh;
+
+}
+.videoWrap{
+  background: #090C2A;
+position: relative;
+overflow: hidden;
+border-radius: 7%;
+overflow: hidden;
 }
 .row{
   padding: 2vh 2vw;
   margin: 0!important;
+
 }
 /* Create two equal columns that floats next to each other */
 .column {

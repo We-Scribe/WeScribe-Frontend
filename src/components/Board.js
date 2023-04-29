@@ -9,6 +9,7 @@ import axios from "axios";
 import { NOTES_URL, NOTES_DETAILS_URL } from "../api/constants";
 import { getConfig } from "../utils/getConfig";
 import { ErrorHandler } from "../utils/ErrorHandler";
+import Sidebar from "./Sidebar.js";
 
 function Board(props) {
   const [idState, setIdState] = useState("");
@@ -100,42 +101,18 @@ function Board(props) {
   };
 
   return (
-    <div className="row">
-      <div className="column">
-        <div className="px-2 py-2">
-          <form className="form-inline">
-            <label style={{ paddingInlineEnd: "15px" }}>
-              Enter Video/Meeting URL:
-            </label>
-            <input
-              className="form-control w-50 pl-2 rounded"
-              type="text"
-              value={nameState.name}
-              onChange={onChangeVideoState}
-            />
-          </form>
-        </div>
-        <iframe
-          src={nameState.value}
-          className="video"
-          frameBorder="0"
-          allow="autoplay; encrypted-medial; gyroscope; picture-in-picture"
-          allowFullScreen="1"
-          title="video"
-          width="97%"
-          frameBorder="0"
-        />
-      </div>
-      <div className="column">
-        <main style={{ maxHeight: "70vh" }}>
-          <form className="form-inline">
-            <label
+    <div class="outerBoard">
+    <div class="mainTrial">
+<div class="d-flex justify-content-center" style={{marginTop:'10px'}}>
+<form className="form-inline" >
+          <label
               style={{
                 fontFamily: "sans-serif,Poppins",
                 paddingInlineEnd: "5px",
+                color: "transparent",
               }}
             >
-              Share this board with your friends now!{" "}
+              ....
             </label>
             <CopyButton />
             <label
@@ -149,7 +126,7 @@ function Board(props) {
             </label>
             <button
               type="button"
-              class="btn btn-primary"
+              class="button"
               id="toggle"
               onClick={switchBoard}
             >
@@ -158,11 +135,47 @@ function Board(props) {
                 : "Switch to Text Editor"}
             </button>
           </form>
-          <div id="editor" style={{ paddingTop: "1vh" }}>
-            {boardState.value == "firepad" ? <Editor /> : <Witeboard />}
           </div>
+    <div className="row">
+      
+      <div className="column">
+        <Sidebar name={nameState} video={onChangeVideoState}/>
+        <div className="px-2 py-2">
+          {/* <form className="form-inline">
+            <label style={{ paddingInlineEnd: "15px" }}>
+              Enter Video/Meeting URL:
+            </label>
+            <input
+              className="form-control w-50 pl-2 rounded"
+              type="text"
+              value={nameState.name}
+              onChange={onChangeVideoState}
+            />
+          </form> */}
+        </div>
+        <div className="videoWrap">
+        <iframe
+          src={nameState.value}
+          className="video"
+          frameBorder="0"
+          allow="autoplay; encrypted-medial; gyroscope; picture-in-picture"
+          allowFullScreen="1"
+          title="video"
+          width="97%"
+          // frameBorder="0"
+          // style={{padding:'20px'}}
+        />
+      </div>
+      </div>
+      <div className="column">
+        <main style={{ maxHeight: "70vh",paddingTop:'1.3vw' }}>
+        <div className="videoWrap">
+            {boardState.value == "firepad" ? <Editor /> : <Witeboard />}
+        </div>
         </main>
       </div>
+    </div>
+    </div>
     </div>
   );
 }

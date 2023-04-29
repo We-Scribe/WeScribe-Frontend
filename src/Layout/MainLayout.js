@@ -1,4 +1,3 @@
-import MyNavbar from '../components/MyNavbar.js' 
 import '../static/MainLayout.css'
 
 import { connect } from 'react-redux';
@@ -8,7 +7,6 @@ import { withRouter } from 'react-router-dom';
 function MainLayout(props) {
   return (
     <div>
-        <MyNavbar/>
         {props.children}
     </div>
   );

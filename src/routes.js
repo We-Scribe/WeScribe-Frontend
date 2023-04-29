@@ -6,17 +6,19 @@ import RegisterForm from './components/Register';
 import Login from './components/Login';
 import Board from './components/Board';
 import Notes from './components/Notes';
+import MyNavbar from './components/MyNavbar';
 
 const BaseRouter = () => (
-  <div>
     <Switch>
+    <Route path='/WeScribe-Frontend/board' component={Board} />
+    <div>
+      <MyNavbar/>
       <Route exact path='/WeScribe-Frontend/' component={Home} />
       <Route exact path='/WeScribe-Frontend/register' component={RegisterForm} />
       <Route exact path='/WeScribe-Frontend/login' component={Login} />
       <Route exact path='/WeScribe-Frontend/notes' component={Notes} />
-      <Route path='/WeScribe-Frontend/board' component={Board} />
+      </div>
     </Switch>
-  </div>
 );
 
 export default BaseRouter;

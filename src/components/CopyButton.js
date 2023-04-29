@@ -32,7 +32,7 @@ function CopyButton() {
             />
             </svg>
             <div>
-            Copy Link
+            Share Now!
             </div>
         </div>
         <div className="copied">Copied</div>

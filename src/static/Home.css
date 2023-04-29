@@ -5,11 +5,10 @@
 .main_banner{
     display: grid;
     place-items: center;
-    margin-bottom: 30vh;
 }
 .main_banner_logo{
-    margin-top: 10vh;
-    height: 30vh;
+    /* margin-top: 10vh; */
+    height: 100px;
     /*max-width: 500px;*/
     /*max-height: 222px;*/
     color: var(--first-color);
@@ -52,4 +51,10 @@ html {
     text-align: center;
     max-width: 70em;
     min-width: 10px;
+}
+body{
+    background-image: url('../assets/62.jpg');
+}
+.customContainer{
+    margin-top: 20vh;
 }
