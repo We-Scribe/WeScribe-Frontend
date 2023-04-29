@@ -1,9 +1,17 @@
-An App to Increase productivity.
+<h1 align="center">WeScribe Frontend</h1>
 
-Tech Stack:
-React + Firebase + Django + Discord
+### Installation
 
-Setting It Up Locally:
+    npm install
 
-1) npm install
-2) npm start
+### Run the application
+
+    npm start
+
+### Tech Stack
+
+> React
+
+> Firebase
+
+- Checkout the app at this [Link](https://gaganagarwal77.github.io/WeScribe-Frontend/board) :)

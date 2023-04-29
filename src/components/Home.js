@@ -12,6 +12,7 @@ function Home() {
             This app is built to help students collaborate with much ease and at the same time be productive.
             We have a discord bot too for students!! Join our server now.
             </div>
+            <a href="/WeScribe-Frontend/board" class="btn btn-primary">Try It Out Now!</a>
         </section>
     )
 }

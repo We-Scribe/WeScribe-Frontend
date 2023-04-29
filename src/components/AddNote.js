@@ -44,13 +44,13 @@ function AddNote(){
       boardID: generateBoardID(),
     }, getConfig())
     .then((res) => {
+      window.location.reload(false);
     })
     .catch((err) => {
       console.log(ErrorHandler(err));
     });
 
-    handleClose();
-    window.location.reload(false);
+    handleClose();    
 }
 
   return (

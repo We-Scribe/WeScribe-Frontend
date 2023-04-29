@@ -10,11 +10,11 @@ import Notes from './components/Notes';
 const BaseRouter = () => (
   <div>
     <Switch>
-      <Route exact path='/WeScribe/' component={Home} />
-      <Route exact path='/WeScribe/register' component={RegisterForm} />
-      <Route exact path='/WeScribe/login' component={Login} />
-      <Route exact path='/WeScribe/notes' component={Notes} />
-      <Route path='/WeScribe/board' component={Board} />
+      <Route exact path='/WeScribe-Frontend/' component={Home} />
+      <Route exact path='/WeScribe-Frontend/register' component={RegisterForm} />
+      <Route exact path='/WeScribe-Frontend/login' component={Login} />
+      <Route exact path='/WeScribe-Frontend/notes' component={Notes} />
+      <Route path='/WeScribe-Frontend/board' component={Board} />
     </Switch>
   </div>
 );

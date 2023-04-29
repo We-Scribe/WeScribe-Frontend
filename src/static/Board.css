@@ -2,7 +2,10 @@
 .video{
     height: 77vh;
 }
-
+.whiteboard{
+  height: 77vh;
+  background-color: white;
+}
 .row{
   padding: 2vh 2vw;
   margin: 0!important;
