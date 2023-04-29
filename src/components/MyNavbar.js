@@ -11,7 +11,7 @@ function MyNavbar(props) {
   const { logout, isAuthenticated, username } = props;
 
   return(
-  <Navbar collapseOnSelect bg = "navbar" >
+  <Navbar collapseOnSelect bg = "navbar">
     <Container>
       <Navbar.Brand as={Link} className="nav-brand" to="/WeScribe-Frontend/">
         <img className="navbar_logo" src = {logo} />

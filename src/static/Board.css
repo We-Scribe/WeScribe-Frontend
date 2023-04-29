@@ -1,41 +1,41 @@
-.outerBoard{
+.outerBoard {
   min-height: 100vh;
   background-color: black;
   overflow-y: hidden;
 }
-.video{
-    height: 80vh;
+.video {
+  height: 80vh;
 }
-.whiteboard{
+.whiteboard {
   height: 80vh;
   background-color: white;
 }
-.mainTrial{
+.mainTrial {
+  box-shadow: 12px 12px 16px 0 rgba(54, 54, 54, 0.8),
+  -8px -8px 8px 0 rgba(82, 82, 82, 0.6);
   /* display: flex; */
-background-color: #090C2A;
-/* flex-direction: row; */
-align-items: center;
-justify-content: space-evenly;
-border-radius: 20px;
-border: 2px solid black;
-margin-top: 3vh;
-margin-bottom: 1vh;
-margin-left: 3vw;
-width: 95vw;
-height: 95vh;
-
+  background-color: #090c2a;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 50px;
+  border: 2px solid black;
+  margin-top: 3vh;
+  margin-bottom: 1vh;
+  margin-left: 3vw;
+  width: 95vw;
+  height: 95vh;
 }
-.videoWrap{
-  background: #090C2A;
-position: relative;
-overflow: hidden;
-border-radius: 7%;
-overflow: hidden;
+.videoWrap {
+  background: #090c2a;
+  position: relative;
+  overflow: hidden;
+  border-radius: 7%;
+  overflow: hidden;
 }
-.row{
+.row {
   padding: 2vh 2vw;
-  margin: 0!important;
-
+  margin: 0 !important;
 }
 /* Create two equal columns that floats next to each other */
 .column {
@@ -47,16 +47,17 @@ overflow: hidden;
   padding-left: 1vw;
   padding-right: 1vw;
 }
-  
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-  
+
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;
-  }}
+  }
+}

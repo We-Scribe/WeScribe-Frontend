@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { CardColumns,Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AddNote from './AddNote';
+
+import "../static/Notes.css";
+
 import axios from 'axios';
 import { connect } from 'react-redux';
 
@@ -42,7 +45,7 @@ class Notes extends Component {
                 <CardColumns style ={{ marginLeft:'10vw',marginRight:'10vw',maxWidth:'75vw'}}>
                 {arr.map((note) => {    
                     return (
-                        <Card>
+                        <Card className="card-shadow">
                         <Card.Body>
                             <Link to= {"/WeScribe-Frontend/board" + note.boardID}>
                                 <Card.Title>{note.title}</Card.Title>

@@ -10,13 +10,14 @@ import { NOTES_URL, NOTES_DETAILS_URL } from "../api/constants";
 import { getConfig } from "../utils/getConfig";
 import { ErrorHandler } from "../utils/ErrorHandler";
 import Sidebar from "./Sidebar.js";
+import { DEFAULT_YOUTUBE_EMBED, DEFAULT_YOUTUBE_NAME, YOUTUBE_REGEX } from "../utils/constants.js";
 
 function Board(props) {
   const [idState, setIdState] = useState("");
 
   const [nameState, setNameState] = useState({
-    name: "https://www.youtube.com/watch?v=bmVKaAV_7-A",
-    value: "https://youtube.com/embed/bmVKaAV_7-A",
+    name: DEFAULT_YOUTUBE_NAME,
+    value: DEFAULT_YOUTUBE_EMBED,
   });
 
   const [boardState, setBoardState] = useState({
@@ -42,7 +43,7 @@ function Board(props) {
   }, []);
 
   const youtubeURLCheck = (url) => {
-    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
+    var regExp = YOUTUBE_REGEX;
     var match = url.match(regExp);
     if (match && match[2].length == 11) {
       return "https://www.youtube.com/embed/" + match[2] + "?autoplay=0";
