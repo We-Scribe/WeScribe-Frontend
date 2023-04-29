@@ -3,6 +3,21 @@
   background-color: black;
   overflow-y: hidden;
 }
+
+.button {
+  background-color: #212753 !important;
+  color: #EA72FF !important;
+}
+
+.button:hover {
+  background-color: #EA72FF !important;
+  color: #212753 !important;
+}
+
+.button:focus {
+  box-shadow: 0 0 0 2px rgba(234, 114, 255, 0.4) !important;
+}
+
 .video {
   height: 80vh;
 }
@@ -11,8 +26,7 @@
   background-color: white;
 }
 .mainTrial {
-  box-shadow: 12px 12px 16px 0 rgba(54, 54, 54, 0.8),
-  -8px -8px 8px 0 rgba(82, 82, 82, 0.6);
+      box-shadow: 12px 12px 12px 0px rgba(54, 54, 54, 0.8);
   /* display: flex; */
   background-color: #090c2a;
   /* flex-direction: row; */
@@ -30,7 +44,7 @@
   background: #090c2a;
   position: relative;
   overflow: hidden;
-  border-radius: 7%;
+  border-radius: 5px;
   overflow: hidden;
 }
 .row {

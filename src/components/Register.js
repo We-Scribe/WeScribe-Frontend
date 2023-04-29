@@ -35,7 +35,7 @@ function RegisterForm (props) {
     }
     
     const onAuthenticated = () => {
-        props.history.push('/WeScribe-Frontend/');
+        props.history.push('/WeScribe-Frontend/notes');
     }
 
     if (props.isAuthenticated) {
@@ -114,7 +114,7 @@ function RegisterForm (props) {
                     </button>
 
                     <div className="forgot-password text-right">
-                        Already registered <a href="/WeScribe-Frontend/login">log in?</a>
+                        Already registered? <a href="/WeScribe-Frontend/login"> Sign In</a>
                     </div>
                 </form>
             </div>

@@ -127,7 +127,7 @@ function Board(props) {
             </label>
             <button
               type="button"
-              class="button"
+              className="button"
               id="toggle"
               onClick={switchBoard}
             >

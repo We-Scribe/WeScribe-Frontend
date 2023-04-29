@@ -29,7 +29,7 @@ function LoginForm (props) {
     }
 
     const onAuthenticated = () => {
-        props.history.push('/WeScribe-Frontend/');
+        props.history.push('/WeScribe-Frontend/notes');
     }
 
     if (props.isAuthenticated) {
@@ -75,7 +75,7 @@ function LoginForm (props) {
                     </button>
 
                     <div className="forgot-password text-right">
-                        Not <a href="/WeScribe-Frontend/register">registered</a> yet?
+                        Haven't registered yet?<a href="/WeScribe-Frontend/register"> Sign Up</a>
                     </div>
                 </form>
             </div>

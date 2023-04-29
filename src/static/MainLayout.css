@@ -9,7 +9,6 @@
     flex-direction: column;
     text-align: left;
     margin-top: 10vh;
-    margin-bottom: 10vh;
   }
   
   .inner {
@@ -50,7 +49,8 @@
   .forgot-password a {
     color: #167bff;
   }
-  body {
-    background-image: url('../assets/62.jpg');
-    }
-  
+
+.mainContainer{
+  min-height: 100vh;
+  background: center url('../assets/62.jpg');
+}

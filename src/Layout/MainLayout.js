@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 function MainLayout(props) {
   return (
-    <div>
+    <div className="mainContainer">
         {props.children}
     </div>
   );

@@ -47,20 +47,20 @@ const Sidebar = (props) => {
             <div className="closemenu" onClick={menuIconClick}>
                 {/* changing menu collapse icon on click */}
               {menuCollapse ? (
-                <FiArrowRightCircle size={25}/>
+                <FiArrowRightCircle className="my-icon" size={25}/>
               ) : (
-                <FiArrowLeftCircle size={25}/>
+                <FiArrowLeftCircle className="my-icon" size={25}/>
               )}
             </div>
           </SidebarHeader>
           <SidebarContent>
             <Menu iconShape="square">
-              <MenuItem active={true} icon={<FiHome />}>
-                <Link  to="/WeScribe-Frontend/">Home</Link>
+              <MenuItem active={true} icon={<FiHome className="my-icon" />}>
+                <Link className="my-text" to="/WeScribe-Frontend/">Home</Link>
               </MenuItem>
-              <MenuItem icon={<RiPencilLine />}>
+              <MenuItem icon={<RiPencilLine className="my-icon" />} onClick={()=>setMenuCollapse(false)}>
                 <form className="form-inline">
-            <label style={{ paddingInlineEnd: "15px" }}>
+            <label className="my-icon" style={{ paddingInlineEnd: "15px" }}>
               Enter Video/Meeting URL:
             </label>
             <input
@@ -77,8 +77,8 @@ const Sidebar = (props) => {
           [
             <SidebarFooter>
             <Menu iconShape="square">
-              <MenuItem icon={<CgNotes />}><Link  to="/WeScribe-Frontend/notes">Notes</Link></MenuItem>
-              <MenuItem icon={<FiLogOut />}><Link  to="/WeScribe-Frontend/" onClick={logout}>Logout</Link></MenuItem>
+              <MenuItem icon={<CgNotes className="my-icon" />}><Link className="my-text" to="/WeScribe-Frontend/notes">Notes</Link></MenuItem>
+              <MenuItem icon={<FiLogOut className="my-icon" />}><Link className="my-text" to="/WeScribe-Frontend/" onClick={logout}>Logout</Link></MenuItem>
             </Menu>
             </SidebarFooter>
           ]:[]
