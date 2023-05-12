@@ -1,0 +1,9 @@
+---
+- name: Deploying frontend with Kubernetes
+  hosts: localhost
+  remote_user: dhanush
+  tasks:
+    - name: create frontend deployment and service
+      kubernetes.core.k8s:
+        definition: "{{ lookup('file', './frontend-deployent-service.yaml') | from_yaml }}"
+        state: present
