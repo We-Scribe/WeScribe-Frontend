@@ -1,9 +1,22 @@
----
-- name: Deploying frontend with Kubernetes
-  hosts: localhost
-  remote_user: dhanush
+- name: Deployment on Kubernetes cluster
+  hosts: host_machine
   tasks:
-    - name: create frontend deployment and service
-      kubernetes.core.k8s:
-        definition: "{{ lookup('file', './frontend-deployent-service.yaml') | from_yaml }}"
-        state: present
+
+    # - name: Check Minikube status
+    #   command: minikube status
+    #   register: minikube_status
+    #   changed_when: false
+    #   failed_when: false
+
+    # - name: Start Minikube
+    #   become: false
+    #   command: minikube start
+    #   when: "'Running' not in minikube_status.stdout"
+
+    - name: Applying Kubernetes Command in Repository
+      shell: |
+        cd ./kubernetes/
+        kubectl delete -f .
+        kubectl apply -f .
+      changed_when: false
+      failed_when: false
